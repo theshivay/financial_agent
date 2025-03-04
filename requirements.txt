@@ -6,3 +6,6 @@ duckduckgo-search
 fastapi
 uvicorn
 groq
+python-multipart
+google-generativeai
+google-cloud-aiplatform

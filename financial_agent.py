@@ -1,5 +1,6 @@
 from phi.agent import Agent
 from phi.model.groq import Groq
+from phi.model.google import Gemini
 from phi.tools.yfinance import YFinanceTools
 from phi.tools.duckduckgo import DuckDuckGo
 
@@ -8,12 +9,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 os.environ["PHI_API_KEY"] = os.getenv("PHI_API_KEY")
-os.environ["GEMINI_API_KEY"] = os.getenv("GEMINI_API_KEY")
+os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY")
 os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 
-# model_id = Groq(id="deepseek-r1-distill-llama-70b")
-model_id = Groq(id="llama-3.3-70b-versatile")
+model_id = Groq(id="deepseek-r1-distill-llama-70b")
+# model_id = Groq(id="llama-3.3-70b-versatile")
+# model_id=Gemini(id="gemini-1.5-pro")
 
 # Web-Based Search Agent
 web_search_agent = Agent(
@@ -46,4 +48,5 @@ multi_ai_agent = Agent(
 )
 
 # multi_ai_agent.print_response("Summarize analyst recommendationof NVDA,share the latest news for NVDA",stream=True)
-multi_ai_agent.print_response("What is the stock price of JioMart?What are the analyst recommendations for JioMart?",stream=True)
+# web_search_agent.print_response("What is the stock price of Reliance?What are the analyst recommendations for Reliance?",stream=True)
+multi_ai_agent.print_response("What is the stock price of Tesla?What are the analyst recommendations for Tesla?",stream=True)

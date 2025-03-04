@@ -19,8 +19,8 @@ os.environ["GEMINI_API_KEY"] = os.getenv("GEMINI_API_KEY")
 # os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
 # os.environ["HUGGINGFACEHUB_API_TOKEN"] = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 
-# model_id = Groq(id="deepseek-r1-distill-llama-70b")
-model_id = Groq(id="llama-3.3-70b-versatile")
+model_id = Groq(id="deepseek-r1-distill-llama-70b")
+# model_id = Groq(id="llama-3.3-70b-versatile")
 
 # Web-Based Search Agent
 web_search_agent = Agent(
